@@ -18,7 +18,7 @@ def index():
 
 @app.route("/country/<country>")
 def country(country):
-	if mongo_stories.fins({'country':country}).count > 0:	
+	if mongo_stories.find({'country':country}).count > 0:	
 		stories = mongo_stories.find({'country':country})
 		
 	else:
